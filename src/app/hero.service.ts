@@ -4,13 +4,14 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Hero } from './hero.model';
 import { MessageService } from './message.service';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 
 })
 export class HeroService {
-  private heroesUrl = `api/heroes`;
+  private heroesUrl = `${environment.baseUrl}/heroes`;
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
