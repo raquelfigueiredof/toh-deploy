@@ -14,8 +14,9 @@ export class HeroService {
   private heroesUrl = `${environment.baseUrl}/heroes`;
 
   private httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-    Authorization: localStorage.getItem('token')
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' , 
+    Authorization: localStorage.getItem('token')}),
+  
   };
 
   constructor(
